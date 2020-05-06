@@ -1,8 +1,8 @@
 # parse-server-fs-adapter
-[![Build Status](https://travis-ci.org/parse-community/parse-server-fs-adapter.svg?branch=master)](https://travis-ci.org/parse-community/parse-server-fs-adapter)
-[![codecov.io](https://codecov.io/github/parse-community/parse-server-fs-adapter/coverage.svg?branch=master)](https://codecov.io/github/parse-community/parse-server-fs-adapter?branch=master)
+<!-- [![Build Status](https://travis-ci.org/parse-community/parse-server-fs-adapter.svg?branch=master)](https://travis-ci.org/parse-community/parse-server-fs-adapter)
+[![codecov.io](https://codecov.io/github/parse-community/parse-server-fs-adapter/coverage.svg?branch=master)](https://codecov.io/github/parse-community/parse-server-fs-adapter?branch=master) -->
 
-parse-server file system storage adapter 
+parse-server file system storage adapter with (still partial) support for remote URL directories.
 
 
 # installation
@@ -21,8 +21,8 @@ parse-server file system storage adapter
   "filesAdapter": {
     "module": "@parse/fs-files-adapter",
     "options": {
-      "filesSubDirectory": "my/files/folder" // optional
-    } 
+      "filesSubDirectory": "http://remote/file/directory"
+    }
   }
 }
 ```
@@ -33,7 +33,7 @@ parse-server file system storage adapter
 var FSFilesAdapter = require('@parse/fs-files-adapter');
 
 var fsAdapter = new FSFilesAdapter({
-      "filesSubDirectory": "my/files/folder" // optional
+      "filesSubDirectory": "http://remote/file/directory"
     });
 
 var api = new ParseServer({
